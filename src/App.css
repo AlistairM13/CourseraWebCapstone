@@ -1,6 +1,7 @@
 :root {
   --primary: #495e57;
   --primary-variant: #f4ce14;
+  --yellow-variant: #C2A511;
   --secondary: #ee9972;
   --secondary-variant: #fbdabb;
   --bg: #edefee;
@@ -34,6 +35,13 @@ header,
   padding: 1rem;
 }
 
+h1,
+h2 {
+  font-family: 'Markazi Text', serif;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
 
 /* Header - nav */
 header {
@@ -42,7 +50,6 @@ header {
   align-items: center;
   font-family: 'Karla', sans-serif;
   font-weight: 500;
-
 }
 
 header ul {
@@ -84,14 +91,11 @@ header a:hover {
 
 .hero-text h1 {
   font-size: 4rem;
-  color: #C2A511;
-  font-weight: 400;
+  color: var(--yellow-variant);
   height: 4rem;
-  font-family: 'Markazi Text', serif;
 }
 
 .hero-text h2 {
-  font-size: 2rem;
   font-weight: 300;
   margin-bottom: 1rem;
 }
@@ -119,10 +123,8 @@ header a:hover {
 }
 
 .special-title h2 {
-  font-family: 'Markazi Text', serif;
   font-size: 3.5rem;
   line-height: 80%;
-  font-weight: 400;
 }
 
 .dish-container {
@@ -142,12 +144,14 @@ header a:hover {
   flex-direction: column;
   transition: transform 0.3s;
 }
-.dish:hover{
+
+.dish:hover {
   transform: scale(1.01);
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
-   rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
-.dish img{
+
+.dish img {
   height: 40%;
   object-fit: cover;
 }
@@ -157,24 +161,90 @@ header a:hover {
   justify-content: space-between;
   padding: 1rem;
 }
-.dish-title h3{
+
+.dish-title h3 {
   font-weight: 800;
 }
-.dish-title span{
+
+.dish-title span {
   color: var(--secondary);
   font-weight: 800;
 }
+
 .dish p {
   flex: 1;
   padding: 1rem;
   font-weight: 300;
 }
+
 .dish a {
   font-weight: 500;
   padding: 1rem;
   display: flex;
   gap: 0.5rem;
   align-items: center;
+}
+
+/* Testimonials */
+.testimonials-container {
+  background-color: var(--bg-variant);
+  max-height: 100vh;
+  overflow: hidden;
+  padding-bottom: 2rem 0;
+}
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonials h2 {
+  font-size: 3.5rem;
+  padding: 2rem 0;
+  color: var(--yellow-variant);
+}
+
+.test-box-container {
+  font-family: 'Karla', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  height: 50vh;
+  cursor: default;
+}
+
+.testimonial {
+  width: 23%;
+  padding: 1rem;
+  background-color: var(--bg);
+  border-radius: 1rem;
+}
+
+.test-image {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.test-image img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.test-rating {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.test-description {
+  font-weight: 300;
 }
 
 @media screen and (max-width: 720px) {
@@ -184,6 +254,10 @@ header a:hover {
 }
 
 @media screen and (max-width: 540px) {
+  nav {
+    display: none;
+  }
+
   .hero-container {
     padding: 0;
     margin-bottom: 1rem;
@@ -214,24 +288,41 @@ header a:hover {
   .hero-text {
     z-index: 1;
   }
-  .hero-text h2{
+
+  .hero-text h2 {
     font-weight: 600;
   }
+
   .hero p {
     margin-bottom: 2rem;
-    font-weight: 400;
   }
 
   .hero img {
     display: none;
   }
-  .dish-container{
+
+  .dish-container {
     flex-direction: column;
     align-items: center;
   }
-  .dish{
+
+  .dish {
     width: 70%;
     font-size: 1.5rem;
     margin-bottom: 1rem;
+  }
+
+  .testimonials-container {
+    max-height: 120vh;
+  }
+
+  .test-box-container {
+    flex-direction: column;
+    height: 100%;
+    gap: 1rem;
+  }
+
+  .testimonial {
+    width: 70%;
   }
 }
