@@ -14,6 +14,7 @@ export default function Main() {
           <img src='./assets/images/restaurant-food.jpg' alt='Image of a chef holding food' />
         </section>
       </div>
+
     </main>
   )
 }
