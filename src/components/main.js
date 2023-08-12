@@ -21,24 +21,24 @@ const specials = [
   },
 ]
 
-const testimonials =[
+const testimonials = [
   {
-    name:"Alex",
+    name: "Alex",
     rating: 10,
     image: '/assets/images/pfp1.png'
   },
   {
-    name:"Lisa",
+    name: "Lisa",
     rating: 10,
     image: '/assets/images/pfp2.png'
   },
   {
-    name:"Vin Diesel",
+    name: "Vin Diesel",
     rating: 10,
     image: '/assets/images/pfp4.jpg'
   },
   {
-    name:"Sharon",
+    name: "Sharon",
     rating: 10,
     image: '/assets/images/pfp3.png'
   },
@@ -50,33 +50,11 @@ export default function Main() {
       <HeroSection />
       <SpecialsSection />
       <Testimonials />
+      <About />
     </main>
   )
 }
-function Testimonials() {
-  return (
-    <div className='testimonials-container'>
-      <section className='testimonials max-w'>
-        <h2>Testimonials</h2>
-        <div className='test-box-container'>
-          {testimonials.map(item => <Testimonial key={item.name} {...item} />)}
-        </div>
-      </section>
-    </div>
-  )
-}
-function Testimonial(props) {
-  return (
-    <article className='testimonial'>
-      <div className='test-image'>
-        <img src={props.image} alt={`${props.name}'s profile picture`} />
-        <p>{props.name}</p>
-      </div>
-      <p className='test-rating'>Rating: {props.rating}⭐</p>
-      <p className='test-description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque. Integer in orci urna</p>
-    </article>
-  )
-}
+
 
 function HeroSection() {
   return (
@@ -119,9 +97,51 @@ function Dish(props) {
       <p>
         {props.description}
       </p>
-      <a>Order a delivery<span>
+      <a href='#'>Order a delivery<span>
         <img src='/assets/icon_delivery_.svg' alt={null} />
       </span> </a>
     </article>
+  )
+}
+
+function Testimonials() {
+  return (
+    <div className='testimonials-container'>
+      <section className='testimonials max-w'>
+        <h2>Testimonials</h2>
+        <div className='test-box-container'>
+          {testimonials.map(item => <Testimonial key={item.name} {...item} />)}
+        </div>
+      </section>
+    </div>
+  )
+}
+
+function Testimonial(props) {
+  return (
+    <article className='testimonial'>
+      <div className='test-image'>
+        <img src={props.image} alt={`${props.name}'s profile picture`} />
+        <p>{props.name}</p>
+      </div>
+      <p className='test-rating'>Rating: {props.rating}⭐</p>
+      <p className='test-description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque. Integer in orci urna</p>
+    </article>
+  )
+}
+
+function About() {
+  return (
+    <section className='about max-w'>
+      <article className='about-text'>
+        <h2>Little Lemon</h2>
+        <h3>Chicago</h3>
+        <p>Little Lemon is a charming neighborhood bistro that serves simple food and classic cocktails in a lively but casual environment. The restaurant feature a locally sourced menu with daily specials.</p>
+      </article>
+      <div className='about-images'>
+        <img src='/assets/images/restaurant.jpg' alt='Picture of Little Lemon Restaurant' />
+        <img src='/assets/images/Mario-and-Adrian-b.jpg' alt='Picture of Mario And Adrian' />
+      </div>
+    </section>
   )
 }
