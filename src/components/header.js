@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Header() {
   return (
-    <header className='max-w '>
+    <header className='max-w'>
       <img src='../assets/Logo.svg' alt='Little Lemon' />
       <nav>
         <ul>
